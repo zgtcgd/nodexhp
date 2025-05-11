@@ -2,12 +2,12 @@
   "name": "Hello-World",
   "version": "1.1.0",
   "description": "Hello-World",
-  "main": "server.js",
+  "main": "app.js",
   "repository": "",
   "author": "MY",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "axios": "latest"

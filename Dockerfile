@@ -2,7 +2,7 @@ FROM node:alpine
 
 WORKDIR /app
 
-COPY server.js package.json /app/
+COPY app.js package.json /app/
 
 ARG PORT=${PORT:-'3000'}
 EXPOSE $PORT
@@ -13,4 +13,4 @@ RUN apk update && \
 
 HEALTHCHECK --interval=2m --timeout=30s CMD curl --fail http://localhost/healthcheck || exit 1
 
-ENTRYPOINT [ "node", "/app/server.js" ]
+ENTRYPOINT [ "node", "/app/app.js" ]
