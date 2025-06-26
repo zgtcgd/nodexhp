@@ -2,10 +2,13 @@ FROM node:alpine
 
 WORKDIR /app
 
-COPY app.js package.json /app/
-
+COPY package.json ./
 RUN apk update && \
     apk add --no-cache bash wget curl procps && \
     npm install
 
-CMD ["npm", "start"]
+COPY app.js ./
+
+EXPOSE 3000
+
+ENTRYPOINT [ "node", "app.js" ]
